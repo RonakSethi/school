@@ -1,0 +1,41 @@
+var responseVar = {}
+
+//responseVar.alreadyactivate                   = 'Your mobile number is already verified';
+responseVar.sidRequired                         = 'User id should not be blank';
+responseVar.phoneRequired                       = 'Phone number should not be blank';
+responseVar.emailRequired                       = 'Email should not be blank';
+responseVar.mailExists                          = 'Email already exist, please choose another email';
+responseVar.phoneExists                         = 'Phone number already exist, please choose another number';
+responseVar.otpSend                             = 'OTP send successfully';
+responseVar.firstNameRequired                   = 'First name should not be blank';
+responseVar.lastNameRequired                    = 'Last name should not be blank';
+responseVar.roleRequired                        = 'Role id should not be blank';
+responseVar.signUpSuccess                       = 'User signup successfully';
+responseVar.fbIdRequired                        = 'Facebook id should not be blank';
+responseVar.userExist                           = 'User already exist';
+responseVar.passwordRequired                    = 'Password should not be blank';
+responseVar.loginInvalid                        = 'Email and password does not match';
+responseVar.accountSuspend                      = 'Your account is suspended Please contact to admin ';
+responseVar.logintypeRequired                   = 'Login type should not be blank. ';
+responseVar.logoutSuccess                       = 'Logout successfully';
+responseVar.email_not_register                  = 'Email not register with us';
+responseVar.forgotSuccess                       = 'OTP send successfully on your email';
+responseVar.userChangePassSuccess               = 'Password change successfully';
+responseVar.passwordRequired                    = 'Password should not be blank';
+responseVar.wrongOldPassword                    = 'Old password does not match';
+responseVar.recordFound                         = 'Record Found';
+responseVar.dataSuccess                         = 'Data Success';
+responseVar.recordNotFound                      = 'Record Not Found';
+responseVar.contentIdNotFound                   = 'Content Id should not be blank';
+responseVar.latRequired                         = 'Latitute Should not be blank';
+responseVar.lngRequired                         = 'Longitude Should not be blank';
+responseVar.noStudioFound                       = 'No Studio Found';
+responseVar.invalid_sid                         = 'Invalid user';
+responseVar.userUpdateSuccess                   = 'User update successfully';
+responseVar.studioIdRequired                    = 'Studio id should not be blank';
+responseVar.loginSuccess                        = 'Login successfully';
+responseVar.ServiceFound                        = 'Services Found';
+responseVar.noServiceFound                      = 'No Service Found';
+
+
+module.exports = responseVar;

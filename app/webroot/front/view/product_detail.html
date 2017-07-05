@@ -1,0 +1,54 @@
+
+    <div class="container-fluid">
+		<div class=" marginT64 paddingBt60 ">
+        	 <div class="row">
+             <div class="productDescrption">
+            	<div class="shopPage ">
+                		<div class="">
+                        
+                        	<div class="dynamicBg detailLarge" style="background-image:url({{productDetail.image}})"></div>
+                        	
+                       
+                		</div>
+                        
+                       		<div class="col-sm-12">
+                        	<h4 class="productTitle">{{productDetail.name}}</h4>
+                            <div class="priceProduct">{{productDetail.cost}}</div>
+                            <p>{{productDetail.description}} </p>
+                        	</div>
+									
+					<div class="col-xs-6" ng-show = "productDetail.QuntityCont">
+						<div class="input-group">
+							<span class="input-group-btn">
+							  <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]" ng-click = "productQuantity('m')">
+								<span class="glyphicon glyphicon-minus"></span>
+							  </button>
+							</span>
+							<input type="text" name="quant[2]" class="form-control input-number"  min="1" max="100" ng-model = "productDetail.quantityVal">
+						  <span class="input-group-btn">
+							  <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]" ng-click = "productQuantity('p')">
+								  <span class="glyphicon glyphicon-plus"></span>
+							  </button>
+						  </span>
+						</div>
+				</div>
+				<div class="col-xs-6">
+					<div class="text-right">
+						<button class="addtoCart" ng-click = "addToCart()" ng-show = "productDetail.cartBtn">ADD to Cart</button>
+					</div>
+				
+				</div>
+                            
+                            
+                    
+						           
+                </div>
+                   <div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>    
+  
+</div>
+    
+<div class="footerBtns" ng-click = "cart()"> <a href=""  class="transition viewCart"> <img src="front/img/cart-Icon.png" alt="" width="20"> VIEW CART ({{productDetail.cartCount}}) </a> </div>

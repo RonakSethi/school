@@ -1,0 +1,23 @@
+<div class="container-fluid">
+	<div class="mainBg marginT70 paddingBt60 distributorBlock ">
+		<h2 class="text-center">Enter Distributor Code </h2>
+		<p>This code helps us show you the correct products & give credit to the current distributor. </p>
+		
+		<div class="form-group">
+		  <input type="text" placeholder="" class="form-control marginT15" ng-model="rec.keyword" ng-keyup="getAllList()" >
+		  <span ng-show = "rec.IsVisibleError" class="error">{{rec.error}}</span>
+		  <ul class="autoSearch" ng-show = "rec.IsVisible">
+			<li ng-repeat = "record in rec.suggestions"> 
+				<a href="javascript:void(0)" ng-click="getCode(record.User.check_in_code)">
+					<span class="col-xs-8">{{record.User.full_name}}</span>
+					<span class="col-xs-4">{{record.User.check_in_code}}</span>
+				</a>
+			</li>
+		  </ul>
+		</div>
+	  <div class="clearfix"></div>
+	</div>    
+</div>
+<div class="footerBtns" ng-click="submit()"> <a href=""  class="transition"> ENTER </a> </div>
+
+ 

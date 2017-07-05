@@ -1,0 +1,38 @@
+<div class="container-fluid">
+	<div class=" marginT64 paddingBt60">
+		<div class="shopPage ">
+			<div class="row" ng-show = "product.header_vis">      
+				<div class="dynamicBg shopLarge" style="background-image:url({{product.header}})"></div>
+				
+			</div>
+			
+			<div  ng-show = "product.no_record">      
+					No record found
+			</div>
+			
+			<div class="productListing">
+				<ul  infinite-scroll='loadMore()' infinite-scroll-distance='4'>
+					<li class="productBlock" ng-repeat = "record in product.list" ng-click = "product_detail(record.Product.id)">
+							<div class="productImage dynamicBg" style="background-image:url({{record.Product.picture}})"></div>
+					<h4><a href="javascript:void(0)">{{record.Product.name}}</a></h4>
+					<p>{{record.Product.cost}}</p>
+					</li>
+				</ul>    
+                            
+				<figure class="listingLogo"> <img src="{{product.logo}}" alt=""> </figure>
+				
+				<div class="text-center">
+					<button class="switchShop" ng-click = "switchShop()">Switch Shop</button>
+				
+				</div>
+				 
+			</div>           
+	</div>
+            
+            
+          <div class="clearfix"></div>
+        </div>    
+  
+    </div>
+    
+    <div class="footerBtns" ng-click = "cart()"> <a href="javascript:void(0);"  class="transition viewCart"> <img src="front/img/cart-Icon.png" alt="" width="20"> VIEW CART ({{product.cartCount}}) </a> </div>

@@ -1,0 +1,30 @@
+{
+  "name": "School",
+  "version": "1.0.0",
+  "description": "",
+  "main": "android_apnagent.js",
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "fs-extra": "^3.0.1",
+    "hashids": "^1.1.1",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "mysql": "^2.13.0",
+    "net": "^1.0.2",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0",
+    "request": "^2.81.0",
+    "sha1": "^1.1.1",
+    "twilio": "^3.4.0",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ronak Sethi",
+  "license": "ISC"
+}

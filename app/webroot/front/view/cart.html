@@ -1,0 +1,72 @@
+<div class="container-fluid">
+		<div class=" marginT64 paddingBt60 ">
+        
+			<div class="cartBlock">
+				<div class="cartRow row" ng-repeat = "record in cart.list" id="cartCont{{record.id}}">
+                		<div class="col-xs-8">
+                        	<div class="productDes">
+                            		<span class="iteamPic dynamicBg" style="background-image:url({{record.picture}})"></span>								<div class="productName"> {{record.name}} </div>
+                                    <div class="shortDescpertion">{{record.description}}</div>
+                                    <div class="priceProduct" ng-model = "cart.cost">{{record.cost * record.quantity}}</div>
+                            
+                            
+                            </div>
+                        
+                        </div>
+                        <div class="col-xs-2" ng-click = "deleteCartProduct(record)">
+                        	<a href="javascript:void(0);" class="iconDelete"></a>
+                        
+                        </div>
+                		<div class="col-xs-2">
+                        	<div class="verticalQty">
+                            		<div class="input-group">
+									  <span class="input-group-btn" ng-click = "decreaseQuantity(record)">
+										  <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+											<span class="glyphicon glyphicon-minus"></span>
+										  </button>
+									  </span>
+										<input type="text"  class="form-control input-number" ng-value="{{record.quantity}}" min="1" max="100" ng-model = "record.quantity" >
+									  <span class="input-group-btn"  ng-click = "increaseQuantity(record)">
+										  <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+											  <span class="glyphicon glyphicon-plus"></span>
+										  </button>
+									  </span>
+									</div>
+                            
+                            </Div>
+                        
+                        
+                        </div>
+                </div>
+              
+                
+                
+                <div class="row" ng-show = "cart.total">
+                		<div class="col-xs-12">
+                        <div class="totalBlock">
+                        	<div class="col-xs-6">
+                            	<div class="totalHeading text-uppercase">Total</div>
+                            </div>
+                        	<div class="col-xs-6">
+                            	<div class="totalValue text-right">{{cart.total_product}}</div>
+                            
+                            </div>
+                        <div class="clearfix"></div>
+                        </div>	
+                        
+                        </div>
+                        
+                		
+                </div>
+				<div  ng-show = "cart.noRecord"> 
+					No record found
+				</div>
+            </div> 	
+          <div class="clearfix"></div>
+        </div>    
+		
+		
+		
+    </div>
+    <div class="footerBtns" ng-click = "checkout()"> <a href="javascript:void(0);"  class="transition viewCart"> Checkout </a> </div>
+  

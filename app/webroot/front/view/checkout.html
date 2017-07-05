@@ -1,0 +1,174 @@
+<form  stripe-form="stripeCallback" name="checkoutForm" novalidate>
+<div class="container-fluid">
+		<div class=" marginT64 paddingBt60 ">
+        	<div class="cartBlock">
+            	<div class="row">
+                		<div class="col-xs-12">
+                        <div class="totalBlock">
+                        	<div class="col-xs-6">
+                            	<div class="totalHeading text-uppercase">Total</div>
+                            </div>
+                        	<div class="col-xs-6">
+                            	<div class="totalValue text-right">{{checkout.total_price}}</div>
+                            
+                            </div>
+                        <div class="clearfix"></div>
+                        </div>	
+                        
+                        </div>
+                        
+                		
+                </div>
+                
+				<div class="row">
+                <div class="col-sm-12">
+                <div class="addressBlock">
+                	<div class="col-sm-12">
+                	<div class="totalHeading text-uppercase">Shipping information</div>	
+                    <div class="form-group" ng-class="{ 'has-error' : checkoutForm.full_name.$invalid && !checkoutForm.full_name.$pristine }">
+                 
+							<input placeholder = "Full name" type="text" name="full_name" class="form-control" ng-model="checkout.full_name" required>
+							<p ng-show="checkoutForm.full_name.$invalid && !checkoutForm.full_name.$pristine" class="help-block">You name is required.</p>
+						
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : checkoutForm.email.$invalid && !checkoutForm.email.$pristine }">
+						
+							<input type="email" name="email" class="form-control" ng-model="checkout.email" placeholder="Email" required>
+							<p ng-show="checkoutForm.email.$invalid && !checkoutForm.email.$pristine" class="help-block">Email is required.</p>
+						
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : checkoutForm.address.$invalid && !checkoutForm.address.$pristine }">
+                     
+							<input placeholder = "Seeping address" type="text" name="address" class="form-control" ng-model="checkout.address" required>
+							<p ng-show="checkoutForm.address.$invalid && !checkoutForm.address.$pristine" class="help-block">Address is required.</p>
+                    </div>
+                    <div class="row">
+                    <div class="col-xs-6 paddingR0">
+                    	<div class="form-group" ng-class="{ 'has-error' : checkoutForm.city.$invalid && !checkoutForm.city.$pristine }">
+                      
+							<input placeholder = "City" type="text" name="city" class="form-control" ng-model="checkout.city" required>
+							<p ng-show="checkoutForm.city.$invalid && !checkoutForm.city.$pristine" class="help-block">City is required.</p>
+						
+                      
+                    </div>
+                    
+                    </div>
+                    <div class="col-xs-6 paddingL10">
+                    	<div class="form-group" ng-class="{ 'has-error' : checkoutForm.zip_code.$invalid && !checkoutForm.zip_code.$pristine }">
+                    
+							<input placeholder = "zip code" type="text" name="zip_code" class="form-control" ng-model="checkout.zip_code" required>
+							<p ng-show="checkoutForm.zip_code.$invalid && !checkoutForm.zip_code.$pristine" class="help-block">Zip code is required.</p>
+						
+                      
+                    </div>
+                    
+                    </div>
+                    </div>
+                    
+                    <div class="row">
+                    <div class="col-xs-6 paddingR0">
+                    	<div class="form-group" ng-class="{ 'has-error' : checkoutForm.state.$invalid && !checkoutForm.state.$pristine }">
+                      
+							<input placeholder = "State" type="text" name="state" class="form-control" ng-model="checkout.state" required>
+							<p ng-show="checkoutForm.state.$invalid && !checkoutForm.state.$pristine" class="help-block">State code is required.</p>
+						
+                      
+                    </div>
+                    
+                    </div>
+                    <div class="col-xs-6 paddingL10">
+                    	<div class="form-group" ng-class="{ 'has-error' : checkoutForm.country.$invalid && !checkoutForm.country.$pristine }">
+                     	<select class="form-control" name="country" ng-model="checkout.country">
+                        	<option>Country</option>
+							<option ng-repeat = "cList in checkout.country_list" ng-value={{cList.Country.id}}>{{cList.Country.countryName}}</option>
+						</select>
+                      <p ng-show="checkoutForm.country.$invalid && !checkoutForm.country.$pristine" class="help-block">Country is required.</p>
+                    </div>
+                    
+                    </div>
+                    </div>
+                    
+                    <div class="form-group" ng-class="{ 'has-error' : checkoutForm.phone.$invalid && !checkoutForm.phone.$pristine }">
+                     
+							<input placeholder = "Phone" type="text" name="phone" class="form-control" ng-model="checkout.phone" required>
+							
+						<p ng-show="checkoutForm.phone.$invalid && !checkoutForm.phone.$pristine" class="help-block">Country is required.</p>
+                      
+                    </div>
+                    
+                	</div>
+                <div class="clearfix"></div>
+                </div>
+                </div>
+            	</div>
+                
+                <div class="row">
+                <div class="col-sm-12">
+                <div class="addressBlock">
+                	<div class="col-sm-12">
+                	<div class="totalHeading text-uppercase">Payment information</div>	
+                    <div class="form-group" ng-class="{ 'has-error' : checkoutForm.card_num.$invalid && !checkoutForm.card_num.$pristine }">
+                      <input type="text" class="input-block-level form-control" ng-model="number" payments-validate="card" payments-format="card" payments-type-model="type" ng-class="checkoutForm.number.$card.type" placeholder="Card number" name="card_num" required/>
+					  <p ng-show="checkoutForm.card_num.$invalid && !checkoutForm.card_num.$pristine" class="help-block">Invalid card.</p>
+                    </div>
+                    
+                    
+                    <div class="row">
+                    <div class="col-xs-6 paddingR0">
+                    	<div class="form-group" ng-class="{ 'has-error' : checkoutForm.expiry_date.$invalid && !checkoutForm.expiry_date.$pristine }">
+                      <input type="text" class="input-block-level form-control" ng-model="expiry" payments-validate="expiry" payments-format="expiry" placeholder="Expiry date" name="expiry_date" required/>
+                      <p ng-show="checkoutForm.expiry_date.$invalid && !checkoutForm.expiry_date.$pristine" class="help-block">Invalid expiry date.</p>
+                    </div>
+                    
+                    </div>
+                    <div class="col-xs-6 paddingL10">
+                    	<div class="form-group" ng-class="{ 'has-error' : checkoutForm.cvv.$invalid && !checkoutForm.cvv.$pristine }">
+                      <input type="text" class="input-block-level form-control" ng-model="cvc" payments-validate="cvc" payments-format="cvc" payments-type-model="type" placeholder="CVV" name="cvv" required/>
+					  <p ng-show="checkoutForm.cvv.$invalid && !checkoutForm.cvv.$pristine" class="help-block">Invalid cvv.</p>
+                      
+                    </div>
+                    
+                    </div>
+                    </div>
+                    
+                    <div class="form-group" ng-class="{ 'has-error' : checkoutForm.card_holder_name.$invalid && !checkoutForm.card_holder_name.$pristine }">
+                      <input placeholder="Name on Card" class="form-control"  type="text" ng-model="cardName" name="card_holder_name" required>
+                      <p ng-show="checkoutForm.card_holder_name.$invalid && !checkoutForm.card_holder_name.$pristine" class="help-block">Name is required.</p>
+                    </div>
+                    
+                	</div>
+                <div class="clearfix"></div>
+                </div>
+                </div>
+            	</div>
+                
+                <div class="row">
+                <div class="col-sm-12">
+                <div class="addressBlock">
+                	<div class="col-sm-12">
+                	<div class="totalHeading text-uppercase">Billing Address</div>	
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" ng-model="checkout.is_same_address">
+                        <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                        Same as shipping <br>address
+                      </label>
+                      
+                      <p>The creation myth suggests that and exploration of artistic creativity involves refernce.</p>
+                    </div>
+                	</div>
+                <div class="clearfix"></div>
+                </div>
+                </div>
+            	</div>
+				
+           
+            </div> 	
+          <div class="clearfix"></div>
+        </div>    
+  
+    </div>
+    
+    <div class="footerBtns"> <button type="submit"  class="transition viewCart"> Checkout </button>  
+	</div>
+ </form>
