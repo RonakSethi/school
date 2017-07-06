@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Application model for CakePHP.
  *
@@ -18,7 +19,6 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 App::uses('Model', 'Model');
 
 /**
@@ -30,25 +30,29 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
-    
-    /*
-     * Print last query
-     * @param : boolean $fullLong
-     *          - allow to print all the queries
-     * @return : void
-     */
+    /* Backup SQL Filename Of All Logs */
 
-    public function lastQuery($fullLog = false) {
-        Configure::write('debug', 2);
-        $db = $this->getDatasource();
-        $logs = $db->getLog();
-        pr($logs);
-        if ($fullLog) {
-            $log = $logs['log'];
-        } else {
-            $log = end($logs['log']);
+    public $backUpFileName;
+
+    public function isExists($id) {
+        $name = $this->name;
+        if ($this->find('count', array('conditions' => array("$name.id" => $id))) > 0) {
+            return true;
         }
-        echo '<pre>';
-        print_r($log);
+        return false;
+    }
+
+    /* Get Last query executed by this model calss */
+
+    public function lastQuery() {
+        $dbo = $this->getDatasource();
+        $logs = $dbo->getLog();
+        $lastLog = end($logs['log']);
+        return $lastLog['query'];
+    }
+    function beforeSave() {
+        foreach ($this->data[$this->name] as $key=>$value) {
+            $this->data[$this->name][$key]=  str_replace(array('<script>','</script>','<?php','?>','<iframe','</iframe>','<?','<%','%>','<?='), '', $value);
+        }
     }
 }

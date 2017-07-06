@@ -62,6 +62,32 @@
                             </li>
                         </ul>
                     </li>
+                     <li class="has_sub">
+                        <?php
+                        $activeClass = ( isset($leftnav) && $leftnav == 'buses') ? 'subdrop' : '';
+                        echo $this->html->link('<i class="md md-directions-car"></i> <span> Buses </span><span class="menu-arrow"></span>', 'javascript:void(0);', array('escape' => false, 'class' => 'waves-effect ' . $activeClass))
+                        ?>
+                        <ul class="list-unstyled">
+                            <?php $activeSubClass = ( isset($subleftnav) && $subleftnav == 'view_bus') ? 'active' : ''; ?>
+                            <li class="<?php echo $activeSubClass; ?>">
+                                <?php echo $this->html->link('Listings', array('admin' => true, 'controller' => 'buses', 'action' => 'admin_index'), array('class' => $activeSubClass)) ?>
+                            </li>
+                           
+                        </ul>
+                    </li>
+                     <li class="has_sub">
+                        <?php
+                        $activeClass = ( isset($leftnav) && $leftnav == 'trips') ? 'subdrop' : '';
+                        echo $this->html->link('<i class="md md-directions-car"></i> <span> Bus Routes </span><span class="menu-arrow"></span>', 'javascript:void(0);', array('escape' => false, 'class' => 'waves-effect ' . $activeClass))
+                        ?>
+                        <ul class="list-unstyled">
+                            <?php $activeSubClass = ( isset($subleftnav) && $subleftnav == 'view_route') ? 'active' : ''; ?>
+                            <li class="<?php echo $activeSubClass; ?>">
+                                <?php echo $this->html->link('Listings', array('admin' => true, 'controller' => 'trips', 'action' => 'admin_index'), array('class' => $activeSubClass)) ?>
+                            </li>
+                            
+                        </ul>
+                    </li>
                 
                <?php }
                 ?>

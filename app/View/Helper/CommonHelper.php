@@ -33,7 +33,8 @@ class CommonHelper extends AppHelper {
     /* Format Date To Show IN View */
 
     public function formatDateForView($date) {
-        return date(DEFAULT_PHP_DATE_FORMAT, strtotime($date));
+        $dateFormate = Configure::read('Site.defaultDateFormat');
+        return date($dateFormate, strtotime($date));
     }
 
     /* Format Date Time To Show IN View */
@@ -57,15 +58,6 @@ class CommonHelper extends AppHelper {
             $viewValue = "<i class='fa fa-check-square' title='Active'></i>";
         } else {
             $viewValue = "<i class='fa fa-minus-square' title='Deactive'></i>";
-        }
-        return $viewValue;
-    }
- 
-	public function getVerifyValueForView($value) {
-        if ($value == ACTIVE) {
-            $viewValue = "<i class='ion-android-checkmark' title='Active'></i>";
-        } else {
-            $viewValue = "<i class='ion-android-close' title='Deactive'></i>";
         }
         return $viewValue;
     }
@@ -226,78 +218,28 @@ class CommonHelper extends AppHelper {
 		}
 		return $data;
 	}
-
-    public function getFeaturedForView($value) {
-        if ($value == ACTIVE) {
-            $viewValue = "<i class='fa fa-star' title='Active'></i>";
-        } else {
-            $viewValue = "<i class='fa fa-star-o' title='Deactive'></i>";
-        }
-        return $viewValue;
-    }
-
-    function cat_filters($catId){
-        
-        $filters = ClassRegistry::init('CategoryFilter')->find('all',array('conditions'=>array('category_id'=>$catId),'recursive' => 2));
-        $sub_categories = ClassRegistry::init('Category')->find('list',array('fields'=>array('Category.id','Category.category'),'conditions'=>array('parent_id'=>$catId),'recursive' => 0));
-        
-        return array('filters'=>$filters,'sub_categories'=>$sub_categories);
-    }
-
-    function getMetaVal($cfID,$postID){
-        $metaVal = ClassRegistry::init('PostMeta')->find('first',array('conditions'=>array('metakey'=>$cfID,'post_id'=>$postID),'recursive' => 2)); 
-
-        return $metaVal;
-    }
 	
-	function gethashtag($tagid){
-		$tag_list_array = explode(',', $tagid);
-		$tag = ClassRegistry::init('Tag')->find('all', array('conditions' => array('id' => $tag_list_array), 'fields' => array('name')));
-		$tagarray=array();
-		foreach($tag as $key=>$tagdata){
-			$tagarray[] = $tagdata['Tag']['name'];	 
-		}
-		$taglist= implode(', ', $tagarray);
-		return $taglist;
+	function getSchoolName($id = null){
+		$data = ClassRegistry::init('User')->find('first',array('fields'=>array('User.id','User.first_name'),'conditions'=>array('User.id'=>$id))); 
+		
+		return $data['User']['first_name'];
+	}
+	function getSchoolNamebybus($id = null){
+		$data = ClassRegistry::init('Bus')->find('first',array('fields'=>array('Bus.id','Bus.school_id'),'conditions'=>array('Bus.id'=>$id))); 
+		$data = ClassRegistry::init('User')->find('first',array('fields'=>array('User.id','User.first_name','User.last_name'),'conditions'=>array('User.id'=>$data['Bus']['school_id']))); 
+		
+		return $data['User']['first_name'].' '.$data['User']['last_name'];
 	}
 	
-	function getPayementVal($pID){
-		$featuredList = array();
-        $paymentVal = ClassRegistry::init('Payment')->find('first',array('conditions'=>array('id'=>$pID,'type'=>1))); 
-		$featuredVal = ClassRegistry::init('FeaturePost')->find('first',array('conditions'=>array('id'=>$paymentVal['Payment']['fid']))); 
-		$featuredList['description']=$featuredVal['FeaturePost']['desc'];
-		$featuredList['created']=$paymentVal['Payment']['created'];
-		$featuredList['expire_date']=$paymentVal['Payment']['expire_date'];
-		return $featuredList;
-    }
-	
-	//Get Country
-	function getcountryByID($cid) {
-        $countryname = ClassRegistry::init('countries')->find('first', array('conditions' => array('numcode' => $cid), 'fields' => array('id', 'niceName'), 'order' => array('niceName Asc')));
-        return $countryname;
-    }
-	
-	function getusername($uid) {
-        $username = ClassRegistry::init('users')->find('first', array('conditions' => array('id' => $uid), 'fields' => array('username')));
-        return $username['users']['username'];
-    }
-	
-	function date_formate($date){
-		return date('d F, Y', strtotime($date));
+	function getTripName($id = null){
+		$data = ClassRegistry::init('Trip')->find('first',array('fields'=>array('Trip.id','Trip.title'),'conditions'=>array('Trip.id'=>$id))); 
+		
+		return $data['Trip']['title'];
 	}
-	
-	function user_image($image, $height=null, $width=null, $class=null, $id=null){
-		$destination = WWW_ROOT.'uploads/users/';		
-		$pic = WEBSITE_URL.'img/no_image.png';
-		if(!empty($image)){
-			if(file_exists($destination.$image)){
-				$pic = WEBSITE_URL.'uploads/users/'.$image;
-			}
-		}
-		$height = !empty($height) ? 'height='.$height.'px' : '';
-		$width = !empty($width) ? 'width='.$width.'px' : '';
-		return '<img src='.$pic.' '.$height.' '.$width.' class='.$class.'  id='.$id.' >';
+	function getBusData($id = null){
+		$getlivedata = ClassRegistry::init('Bus')->query("SELECT * FROM `positions` where deviceid=".$id." order by id desc limit 1"); 
+		
+		return $getlivedata[0]['positions']['latitude'].','.$getlivedata[0]['positions']['longitude'];
 	}
-
 }
 

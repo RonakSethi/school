@@ -4,15 +4,20 @@ class User extends AppModel {
 
     // User Roles 1 -> Admin 1 -> Site User
     public $name = 'User';
-    //public $virtualFields = array('full_name'=>"CONCAT(User.first_name, ' ', User.last_name)");
+    public $belongsTo = array('Role');
     public $validate = array(
-        'name' => array(
-            'name' => array(
+        'fname' => array(
+            'fname' => array(
                 'rule' => 'notEmpty',
-                'message' => 'Please enter full name.',
+                'message' => 'Please enter first name.',
             ),
         ),
-        
+        'lname' => array(
+            'lname' => array(
+                'rule' => 'notEmpty',
+                'message' => 'Please enter last name.',
+            ),
+        ),
         'email' => array(
             'notEmpty' => array(
                 'rule' => 'notEmpty',
@@ -26,9 +31,21 @@ class User extends AppModel {
                 'rule' => 'isUnique',
                 'message' => 'Email address already in use.'
             ),
+        ),
+		'password' => array(
+            'password' => array(
+                'rule' => 'notEmpty',
+                'message' => 'Please enter password.',
+            )
+        ),
+		're_password' => array(
+            're_password' => array(
+                'rule' => 'notEmpty',
+                'message' => 'Please enter confirm password.',
+            )
         )
     );
-
+	
 	function generatePassword($length = 8) {
 
         $password = "";
@@ -47,4 +64,4 @@ class User extends AppModel {
         return $password;
     }
 
-}
+}?>
