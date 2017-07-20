@@ -409,11 +409,11 @@ if (!defined('USER_IMAGE_PATH')) {
     define('USER_IMAGE_PATH', 'uploads/user_images/');
 }
 if (!defined('PRODUCT_IMAGE_PATH')) {
-    define('PRODUCT_IMAGE_PATH',  'http://' . $_SERVER['HTTP_HOST'] .'/sj/uploads/products/');
+    define('PRODUCT_IMAGE_PATH',  'http://' . $_SERVER['HTTP_HOST'] .'/skul/uploads/products/');
 }
 
     if (!defined('SITE_URL')) {
-        define('SITE_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/sj/');
+        define('SITE_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/skul/');
     }
     if (!defined('FACEBOOK_APP_ID')) {
        // define('FACEBOOK_APP_ID', '1625379841084193');
@@ -429,7 +429,7 @@ if (!defined('PRODUCT_IMAGE_PATH')) {
         define('GOOGLE_CLIENT_SECRATE', 'fbWVEZhNvArbA6zvq3nnS8wx');
     }
     if (!defined('IMAGE_UPLOAD')) {
-        define('IMAGE_UPLOAD', 'http://' . $_SERVER['HTTP_HOST'] . '/sj/app/webroot/uploads/');
+        define('IMAGE_UPLOAD', 'http://' . $_SERVER['HTTP_HOST'] . '/skul/app/webroot/uploads/');
     }
 
 
@@ -437,12 +437,12 @@ if (!defined('PRODUCT_IMAGE_PATH')) {
 
 define('DEFAULT_DATE_FORMAT', 'dd/mm/yyyy');
 define('DEFAULT_PHP_DATE_FORMAT', 'm-d-Y');
-Configure::write('Site.url', 'http://' . $_SERVER['HTTP_HOST'] . '/sj/');
+Configure::write('Site.url', 'http://' . $_SERVER['HTTP_HOST'] . '/skul/');
 Configure::write('Site.title', 'Cartridge');
 Configure::write('Site.defaultDateFormat', 'm/d/Y');
 Configure::write('Site.defaultDateTimeFormat', 'm/d/Y H:00');
-Configure::write('Site.docroot', $_SERVER['DOCUMENT_ROOT'] . '/sj/app/webroot/');
-Configure::write('Site.uploads', 'http://' . $_SERVER['HTTP_HOST'] . '/sj/app/webroot/uploads/');
+Configure::write('Site.docroot', $_SERVER['DOCUMENT_ROOT'] . '/skul/app/webroot/');
+Configure::write('Site.uploads', 'http://' . $_SERVER['HTTP_HOST'] . '/skul/app/webroot/uploads/');
 Configure::write('Site.email', 'admin@localllama.com.au');
 
 //Added By Rahul 
