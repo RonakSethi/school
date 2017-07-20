@@ -1,0 +1,18 @@
+/**
+ * EM QuickShop
+ *
+ * @license commercial software
+ * @copyright (c) 2012 Codespot Software JSC - EMThemes.com. (http://www.emthemes.com)
+ */
+
+.quickshop_img{ }
+
+#id_qs_load{width: 621px;position: absolute;top: 30px; left: 50%;display: none;z-index: 1001;background: #fff;min-height: 300px;}
+#output-div{}
+a.close{width: 15px; height: 15px;text-indent: -999em;background: url(../images/close.html) center center no-repeat;display: inline-block;float: right;padding: 10px 10px 0 0;position: absolute;right: -3px;top: -22px;}
+#shadow_box{width: 100%;display: none;position: absolute;left: 0; top: 0;z-index: 1001;background: #000;opacity:0.5;z-index: 1000;filter:alpha(opacity=50)}
+#loadingmask{padding: 5px 0;position: absolute;top: 50%;left: 50%;margin: -30px 0 0 -15px;}
+#loading-mask-loader span{display: block;padding-top: 10px;}
+#loading-mask-loader img{padding-right: 10px;}
+
+#em_quickshop_handler{position: absolute; display:block; }

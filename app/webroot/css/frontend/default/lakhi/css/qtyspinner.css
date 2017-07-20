@@ -1,0 +1,63 @@
+
+.spinner-sprite, .spinner .decrease, .spinner .decrease[disabled], .spinner .increase, .spinner .value, .spinner .value.passive {
+background: url(../images/spinner-sf0d5bd965d.png) no-repeat
+}
+.spinner {
+height: 34px;
+width: 102px;
+overflow: hidden;
+*zoom:1;
+border-right:solid 1px #b2b2b2;
+border-left:solid 1px #b2b2b2;
+float:left;
+}
+.spinner button, .spinner .value {
+text-align: center;
+display: block;
+float: left;
+height: 100%;
+line-height: 25px;
+margin: 0
+}
+.spinner button {
+border: none;
+width: 34px;
+color: #e5312a;
+font: 22px Arial bold;
+padding: 0;
+outline: none
+}
+.spinner .decrease {
+background-position: 0 -68px;
+cursor: pointer;
+text-indent: -10000px;
+border-right: solid 1px #b2b2b2;
+}
+.spinner .decrease[disabled] {
+background-position: 0 -68px;
+cursor: default
+}
+.spinner .increase {
+background-position: 0 0;
+cursor: pointer;
+text-indent: -10000px;
+border-left: solid 1px #b2b2b2;
+}
+.spinner .value {
+width: 34px;
+height: 34px;
+border: none;
+font-family: 'Open Sans', sans-serif;
+font-size:16px;
+font-weight:700;
+color: #999898;
+padding: 0px;
+background-position: 0 -34px;
+}
+.spinner .value.passive {
+background-position: 0 -34px;
+color: #919191
+}
+.spinner .error, .spinner .invalid {
+background: #aa0000
+}

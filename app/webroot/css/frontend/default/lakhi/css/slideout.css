@@ -1,0 +1,185 @@
+#contactFormContainer {
+	bottom: 46px;
+	left: auto;
+	position: absolute;
+	right: 10px;
+}
+#contactForm {
+	height: auto;
+	width: 351px;
+	background: #002FA7;
+	display: none;
+}
+#contactForm fieldset {
+	padding: 30px;
+	border: none;
+}
+#contactForm label {
+	display: block;
+	color: #fff;
+	font-size: 14px;
+	margin: 0 0 5px 0px;
+}
+#contactForm label em {
+	font-style: normal;
+	color: #d40404;
+}
+#contactForm input[type=text] {
+	display: block;
+	width: 96%;
+	margin-bottom: 10px;
+	height: 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #999;
+	font-weight: 400;
+	border: none;
+	border-radius: 3px;
+	padding: 1% 2%;
+}
+
+#contactForm input[type=email] {
+	display: block;
+	width: 96%;
+	margin-bottom: 10px;
+	height: 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #999;
+	font-weight: 400;
+	border: none;
+	border-radius: 3px;
+	padding: 1% 2%;
+}
+
+#contactForm textarea {
+	display: block;
+	width: 96%;
+	margin-bottom: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #999;
+	font-weight: 400;
+	border: none;
+	border-radius: 3px;
+	padding: 1% 2%;
+	resize: vertical;
+}
+#contactForm input[type=submit] {
+	background-color: #414141;
+	color: #fff;
+	padding: 5px;
+	border: none;
+	cursor: pointer;
+}
+#contactForm input[type=submit]:hover {
+	background: #000;
+}
+#contactLink {
+	height: 46px;
+	width: 192px;
+	background: url(../images/feedback.png) no-repeat;
+	display: block;
+	cursor: pointer;
+	float: right;
+	position: absolute;
+	top: -46px;
+	right: 0;
+}
+#messageSent {
+	color: #ff9933;
+	display: none;
+}
+
+
+
+#contactForm1 {
+height: auto;
+
+
+
+}
+#contactForm1 fieldset {
+	padding: 30px;
+	border: none;
+}
+#contactForm1 label {
+	display: block;
+	
+	font-size: 14px;
+	margin: 0 0 5px 0px;
+}
+#contactForm1 label em {
+	font-style: normal;
+	color: #d40404;
+}
+#contactForm1 input[type=text] {
+	display: block;
+	width: 96%;
+	margin-bottom: 10px;
+	height: 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #999;
+	font-weight: 400;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	padding: 1% 2%;
+}
+
+#contactForm1 input[type=email] {
+	display: block;
+	width: 96%;
+	margin-bottom: 10px;
+	height: 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #999;
+	font-weight: 400;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	padding: 1% 2%;
+}
+
+#contactForm1 textarea {
+	display: block;
+	width: 96%;
+	margin-bottom: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13px;
+	color: #999;
+	font-weight: 400;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	padding: 1% 2%;
+	resize: vertical;
+}
+#contactForm1 input[type=submit] {
+	background-color: #414141;
+	color: #fff;
+	padding: 5px;
+	border: none;
+	cursor: pointer;
+}
+#contactForm1 input[type=submit]:hover {
+	background: #000;
+}
+
+ @media (min-width: 240px) and (max-width: 480px) {
+#contactForm {
+	width: 302px;
+	margin: 0px;
+}
+
+#contactForm1 {
+
+	margin: 0px;
+}
+
+#contactLink {
+	top: -46px;
+}
+#contactFormContainer {
+	bottom: 79px;
+}
+}

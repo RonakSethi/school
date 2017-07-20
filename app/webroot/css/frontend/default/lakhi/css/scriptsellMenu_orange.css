@@ -1,0 +1,362 @@
+/*
+* File: scriptsellMenu.css
+* Version: 1.0
+* Description: Responsive jQuery CSS3 Menu plugin
+* Author: saif Sohel (proscriptsell@gmail.com)
+* Copyright 2014,.mojo-code.com
+/* Licensed: You should purchase from !
+*/
+/*================================================== */
+/* General 
+================================================== */
+ul.nav {
+	margin: 0px;
+	padding: 0px;
+}
+ul.nav li {
+	display: inline;
+	float: left;
+	list-style: none;
+	position: relative;
+}
+ul.nav li a {
+	color: #434343;
+	text-decoration: none;
+	position: relative;
+	z-index: 11;
+	display: block;
+	padding: 0px 17px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+ul.nav li .hover, ul.nav .mask {
+	top: auto;
+	bottom: auto;
+	left: 0px;
+	right: 0px;
+	position: absolute;
+	z-index: 1;
+	display: none;
+}
+ul.nav li .nav_img {
+	position: absolute;
+	opacity: 0;
+}
+.arrow {
+	border-style: dashed;
+	border-color: transparent;
+	display: -moz-inline-box;
+	display: inline-block;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: middle;
+	width: 0px;
+	margin-left: 5px;
+	border-top-width: 5px;
+	border-top-style: solid;
+	border-top-color: transparent;
+	border-bottom-width: 5px;
+	border-bottom-style: solid;
+	border-bottom-color: transparent;
+	border-left-width: 5px;
+	border-left-style: solid;
+	border-left-color: #fff;
+	position: absolute;
+	right: 5px;
+	z-index: 99;
+	top: 14px!Important;
+}
+ul.nav>li.submenu {
+	padding-right: 0px;
+}
+ul.nav>li>.arrow {
+	border-color: transparent;
+	border-width: 5px;
+	display: -moz-inline-box;
+	display: inline-block;
+	border-top-width: 7px;
+	border-top-style: solid;
+	border-top-color: #ed5258;
+	right: 5px;
+	float: right;
+	display: none;
+}
+ul.nav li.html_content {
+	padding: 10px;
+}
+ul.nav li .navToolTrip {
+	position: absolute;
+	left: auto;
+	border: 1px solid #000;
+	padding: 10px;
+	min-width: 120px;
+	font-size: 11px;
+	background: rgba(255,255,255,0.8);
+	border: 1px solid #CCC;
+	z-index: 99;
+	-webkit-border-radius: 8px;
+	-webkit-border-top-left-radius: 0;
+	-moz-border-radius: 8px;
+	-moz-border-radius-topleft: 0;
+	border-radius: 8px;
+	border-top-left-radius: 0;
+	display: none;
+}
+ul.nav li .navToolTrip.top {
+	-webkit-border-radius: 8px;
+	-webkit-border-bottom-left-radius: 0;
+	-moz-border-radius: 8px;
+	-moz-border-radius-bottomleft: 0;
+	border-radius: 8px;
+	border-bottom-left-radius: 0;
+	margin-top: auto;
+}
+.toolTripArrows {
+	border-style: dashed;
+	border-color: transparent;
+	border-width: 7px;
+	display: -moz-inline-box;
+	display: inline-block;
+	height: 0;
+	position: absolute;
+	width: 0;
+	border-bottom-width: 10px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+	top: -17px;
+	left: -1px;
+}
+ul.nav li .navToolTrip.top .toolTripArrows {
+	border-top-width: 10px;
+	border-top-style: solid;
+	border-top-color: #CCC;
+	top: auto;
+	bottom: -10px;
+	border-bottom-width: 0px;
+}
+.menu-toggle-button {
+	color: #FFF;
+	padding: 0px 10px;
+	position: relative;
+	cursor: pointer;
+}
+.menu-toggle-button span {
+	position: absolute;
+	right: 10px;
+	top: -81px;
+	font-size: 200%;
+	padding: 0px 10px;
+	line-height: normal;
+	background: #ed5258;
+}
+/*================================================== */
+/* Drop Down
+================================================== */
+ul.nav ul {
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	display: none;
+	z-index: 999;
+}
+ul.nav>li:hover>ul {
+	display: block;
+}
+ul.nav ul ul {
+	top: 0px;
+}
+ul.nav ul li {
+	padding: 0px;
+	display: block;
+	float: none;
+	position: relative;
+}
+
+/*================================================== */
+/* LIGHT BROWN THEME
+================================================== */
+ul.nav.light-brown, .menu-toggle-button.light-brown, {
+ background: #fff;
+}
+ul.nav li a:hover {
+	color: #fff;
+}
+.foc{color: #fff !important; background: #ed5258;}
+ul.nav li a i{
+	float:right;
+	line-height:38px;
+	font-size:21px;
+	margin:0 0 0 5px;
+}
+ul.nav li:hover a{ color:#fff; background: #ed5258;}
+
+ul.nav.light-brown li .hover, ul.nav.lemon li .light-brown {
+	background: #ed5258;
+	color: #fff;
+}
+ul.nav.light-brown ul li a:hover{ background:#000;}
+ul.nav.light-brown li a.selected {
+	color: #fff;
+}
+ul.nav.light-brown li.current a{ background: #c01f25; color:#fff;}
+
+/*================================================== */
+/* MENU EFFECTS
+================================================== */
+ul.nav li .mask {
+	top: 0px;
+	bottom: 0px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	display: block;
+}
+ul.nav li .mask.maskhover {
+	-ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+ul.nav li .mask.zoom {
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-o-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+}
+ul.nav li .mask.zoom.maskhover {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+ul.nav li .mask.bounce {
+	top: -100%;
+}
+ul.nav li .mask.bounce.maskhover {
+	top: 0px;
+	-webkit-animation: bounceY 0.9s linear;
+	-moz-animation: bounceY 0.9s linear;
+	-ms-animation: bounceY 0.9s linear;
+	animation: bounceY 0.9s linear;
+}
+@keyframes bounceY {
+ 0% {
+ transform: translateY(-205px);
+}
+ 40% {
+ transform: translateY(-100px);
+}
+ 65% {
+ transform: translateY(-52px);
+}
+ 82% {
+ transform: translateY(-25px);
+}
+ 92% {
+ transform: translateY(-12px);
+}
+ 55%, 75%, 87%, 97%, 100% {
+ transform: translateY(0px);
+}
+}
+@-moz-keyframes bounceY {
+ 0% {
+ -moz-transform: translateY(-205px);
+}
+ 40% {
+ -moz-transform: translateY(-100px);
+}
+ 65% {
+ -moz-transform: translateY(-52px);
+}
+ 82% {
+ -moz-transform: translateY(-25px);
+}
+ 92% {
+ -moz-transform: translateY(-12px);
+}
+ 55%, 75%, 87%, 97%, 100% {
+ -moz-transform: translateY(0px);
+}
+}
+@-webkit-keyframes bounceY {
+ 0% {
+ -webkit-transform: translateY(-205px);
+}
+ 40% {
+ -webkit-transform: translateY(-100px);
+}
+ 65% {
+ -webkit-transform: translateY(-52px);
+}
+ 82% {
+ -webkit-transform: translateY(-25px);
+}
+ 92% {
+ -webkit-transform: translateY(-12px);
+}
+ 55%, 75%, 87%, 97%, 100% {
+ -webkit-transform: translateY(0px);
+}
+}
+ul.nav li .mask.rotate {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+ul.nav li .mask.rotate.maskhover {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.menu-toggle-button {
+	display: none;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+ul.nav {
+	position: relative;
+	display: none;
+}
+ul.nav.light-brown, .menu-toggle-button.light-brown {
+	background: #ebebeb;
+	min-height: 0px!Important;
+	top: 52px;
+	z-index: 9999999;
+}
+ul.nav li {
+	display: block;
+	float: none;
+	padding-right: 0px!important;
+}
+ul.nav li a i{ position:absolute; right:12px;}
+ul.nav li.submenu ul {
+	position: static;
+}
+ul.nav>li:hover>ul {
+	display: none;
+}
+.menu-toggle-button {
+	display: block;
+}
+ul.show-for-devices {
+	display: block;
+}
+ul.nav li.submenu {
+	float: none!important;
+}
+}

@@ -1,0 +1,30 @@
+#scroll {
+max-height: 1242px;
+}
+.scrollbox-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.scrollbox-rail,
+.scrollbox-bar {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    width: 8px;
+    background-color: #ed5258 ;
+}
+.scrollbox-rail-in,
+.scrollbox-bar-in {
+    display: block;
+}
+.scrollbox-rail {
+    height: 100%;
+    opacity: .2;
+    filter: alpha(opacity=20);
+}
+.scrollbox-bar {
+    min-height: 30px;
+    filter: alpha(opacity=40);
+}
