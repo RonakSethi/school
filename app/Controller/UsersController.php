@@ -1,5 +1,4 @@
 <?php
-
 App::uses('Sanitize', 'Utility');
 
 class UsersController extends AppController {

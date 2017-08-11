@@ -38,6 +38,7 @@ Thumbs.db
 
 tmp/*
 Config/database.php
+Config/core.php
 app/tmp/*
 app/Config/database.php
 !empty
